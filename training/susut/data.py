@@ -23,6 +23,19 @@ class LotSusut:
     lama_simpan_jam: float  # jeda panen -> sortir
     sintetis: bool = False
 
+    def __post_init__(self):
+        # Semua berat WAJIB gram bilangan bulat (KONTEKS §6), bukan kg desimal.
+        for nama in ("berat_kotor_g", "berat_bersih_g", "berat_berangkat_g", "berat_tiba_g"):
+            v = getattr(self, nama)
+            if isinstance(v, bool) or not isinstance(v, int):
+                raise TypeError(f"{nama} harus int gram, dapat {type(v).__name__}")
+            if v < 0:
+                raise ValueError(f"{nama} tidak boleh negatif")
+        if self.berat_kotor_g == 0 or self.berat_berangkat_g == 0:
+            raise ValueError("berat kotor/berangkat harus > 0")
+        if self.berat_bersih_g > self.berat_kotor_g or self.berat_tiba_g > self.berat_berangkat_g:
+            raise ValueError("berat setelah susut tidak boleh melebihi berat awal")
+
     @property
     def susut_sortir(self) -> float:
         return (self.berat_kotor_g - self.berat_bersih_g) / self.berat_kotor_g
