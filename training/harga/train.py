@@ -13,7 +13,7 @@ from training.harga.evaluate import evaluasi
 from training.harga.model import STATUS_KELUARAN, BaselineHarga
 
 VERSI_MODEL = "harga-v1.0.0"
-METODE_RILIS = "ma"
+METODE_RILIS = "ema"  # MAPE rata-rata terendah pada data sintetis
 KANDIDAT = (BaselineHarga("naif"), BaselineHarga("ma", jendela=4), BaselineHarga("ema", alpha=0.5))
 
 
