@@ -1,0 +1,73 @@
+{
+  "data": "SINTETIS - bukan data nyata",
+  "eval": {
+    "ema": {
+      "mape_rata2_pct": 2.793029224968494,
+      "metode": "ema",
+      "per_komoditas": {
+        "bawang": {
+          "mae_rp": 528.5909090909091,
+          "mape_pct": 1.8179222580970988,
+          "n": 22
+        },
+        "cabai": {
+          "mae_rp": 1005.3181818181819,
+          "mape_pct": 2.732932262477075,
+          "n": 22
+        },
+        "kangkung": {
+          "mae_rp": 233.63636363636363,
+          "mape_pct": 3.8282331543313077,
+          "n": 22
+        }
+      }
+    },
+    "ma": {
+      "mape_rata2_pct": 2.9114747867776116,
+      "metode": "ma",
+      "per_komoditas": {
+        "bawang": {
+          "mae_rp": 630.6818181818181,
+          "mape_pct": 2.171647433541436,
+          "n": 22
+        },
+        "cabai": {
+          "mae_rp": 1097.7272727272727,
+          "mape_pct": 2.996619890512514,
+          "n": 22
+        },
+        "kangkung": {
+          "mae_rp": 217.04545454545453,
+          "mape_pct": 3.5661570362788835,
+          "n": 22
+        }
+      }
+    },
+    "naif": {
+      "mape_rata2_pct": 3.1048065331758896,
+      "metode": "naif",
+      "per_komoditas": {
+        "bawang": {
+          "mae_rp": 504.54545454545456,
+          "mape_pct": 1.7365966855058323,
+          "n": 22
+        },
+        "cabai": {
+          "mae_rp": 959.0909090909091,
+          "mape_pct": 2.59558126011714,
+          "n": 22
+        },
+        "kangkung": {
+          "mae_rp": 304.54545454545456,
+          "mape_pct": 4.982241653904697,
+          "n": 22
+        }
+      }
+    }
+  },
+  "metode_rilis": "ma",
+  "n_survei": 78,
+  "seed": 20261021,
+  "status_keluaran": "anjuran-pembanding",
+  "versi_model": "harga-v1.0.0"
+}
