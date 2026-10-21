@@ -4,7 +4,8 @@ from datetime import date
 import pytest
 
 from training.harga import train
-from training.harga.data import (batas_retensi, buat_riwayat_sintetis, papan_harga_resmi)
+from training.harga.data import (batas_retensi, bayar_petani_rp, buat_riwayat_sintetis,
+                                 harga_papan_grade, papan_harga_resmi)
 from training.harga.evaluate import evaluasi
 from training.harga.model import STATUS_KELUARAN, BaselineHarga
 
@@ -87,3 +88,29 @@ def test_model_card_harga_lengkap():
     assert train.VERSI_MODEL in card and "SINTETIS" in card
     for bagian in ("Tujuan", "Data", "Metrik", "Batas", "anjuran pembanding", "BR-305", "BR-306", "MAPE"):
         assert bagian in card
+
+
+def test_grade_b_85_persen_contoh_dokumen():
+    # keuangan/20-papan-harga-mingguan.md minggu 6-12 Okt 2026
+    assert harga_papan_grade((36_000, 34_000, 35_000), "A") == 31_500
+    assert harga_papan_grade((36_000, 34_000, 35_000), "B") == 26_500   # 26.775 -> 26.500
+    assert harga_papan_grade((31_200, 31_200, 31_200), "A") == 28_000
+    assert harga_papan_grade((31_200, 31_200, 31_200), "B") == 23_500   # 23.800 -> 23.500
+    assert harga_papan_grade((6_700, 6_700, 6_700), "A") == 6_000
+    assert harga_papan_grade((6_700, 6_700, 6_700), "B") == 5_000       # 5.100 -> 5.000
+
+
+def test_grade_c_ditolak():
+    with pytest.raises(ValueError):
+        harga_papan_grade((30_000, 30_000, 30_000), "C")
+
+
+def test_bayar_petani_gram_integer():
+    refs = (36_000, 34_000, 35_000)
+    assert bayar_petani_rp(100_000, "A", refs) == 3_150_000     # 100 kg x 31.500
+    assert bayar_petani_rp(14_000, "B", refs) == 371_000        # 14 kg x 26.500
+    assert isinstance(bayar_petani_rp(1_234, "A", refs), int)
+    with pytest.raises(TypeError):
+        bayar_petani_rp(100.5, "A", refs)
+    with pytest.raises(ValueError):
+        bayar_petani_rp(1_000, "C", refs)

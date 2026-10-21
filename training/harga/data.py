@@ -15,6 +15,7 @@ from training.common import KOMODITAS
 BUFFER_LOGISTIK_PCT = 10   # BR-305: median 3 referensi - 10%
 KELIPATAN_PAPAN = 500      # dibulatkan ke bawah kelipatan Rp500
 RETENSI_BULAN = 6          # BR-306
+PERSEN_GRADE = {"A": 100, "B": 85}   # BRD BR-002 (beku): A 100% papan, B 85%, C ditolak
 
 
 @dataclass(frozen=True)
@@ -40,6 +41,24 @@ def papan_harga_resmi(refs: tuple[int, int, int]) -> int:
     med = int(median(refs))
     setelah = med * (100 - BUFFER_LOGISTIK_PCT) // 100
     return setelah // KELIPATAN_PAPAN * KELIPATAN_PAPAN
+
+
+def harga_papan_grade(refs: tuple[int, int, int], grade: str) -> int:
+    """Harga ke petani per kg: A = papan (100%), B = 85% papan dibulatkan ke bawah kelipatan Rp500, C ditolak (BR-002).
+
+    Contoh dokumen: papan A 31.500 -> B 26.775 -> 26.500. BUKAN keluaran model.
+    """
+    if grade not in PERSEN_GRADE:
+        raise ValueError(f"grade {grade} tidak dibeli (hanya A dan B; C ditolak)")
+    a = papan_harga_resmi(refs)
+    return a * PERSEN_GRADE[grade] // 100 // KELIPATAN_PAPAN * KELIPATAN_PAPAN
+
+
+def bayar_petani_rp(berat_bersih_g: int, grade: str, refs: tuple[int, int, int]) -> int:
+    """Rupiah integer = berat bersih (gram int) x harga grade per kg / 1000, dibulatkan ke bawah (asumsi pembulatan)."""
+    if isinstance(berat_bersih_g, bool) or not isinstance(berat_bersih_g, int) or berat_bersih_g < 0:
+        raise TypeError("berat_bersih_g harus int gram >= 0")
+    return berat_bersih_g * harga_papan_grade(refs, grade) // 1000
 
 
 def batas_retensi(hari_ini: date) -> date:
