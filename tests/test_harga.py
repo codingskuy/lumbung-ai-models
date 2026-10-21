@@ -16,7 +16,7 @@ def test_papan_resmi_contoh_dokumen_cabai():
 
 def test_papan_resmi_dibulatkan_ke_bawah_500():
     assert papan_harga_resmi((30_000, 30_000, 30_000)) == 27_000
-    assert papan_harga_resmi((29_900, 30_000, 31_000)) == 26_500  # 29.900*0,9=26.910 -> 26.500
+    assert papan_harga_resmi((29_000, 29_900, 31_000)) == 26_500  # median 29.900*0,9=26.910 -> 26.500
     assert papan_harga_resmi((6_000, 6_000, 6_000)) == 5_000      # 5.400 -> 5.000
 
 
