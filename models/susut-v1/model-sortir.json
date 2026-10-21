@@ -1,0 +1,18 @@
+{
+  "fitur": "lama_simpan_jam",
+  "koef": {
+    "bawang": {
+      "intercept": 0.02032020914890584,
+      "slope": 0.00036265069917426883
+    },
+    "cabai": {
+      "intercept": 0.03742407794539486,
+      "slope": 0.0009863654613845429
+    },
+    "kangkung": {
+      "intercept": 0.05807962257981843,
+      "slope": 0.00124861646171887
+    }
+  },
+  "target": "sortir"
+}

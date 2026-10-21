@@ -1,0 +1,245 @@
+{
+  "data": "SINTETIS - bukan data nyata",
+  "eval": {
+    "jalan/baseline_linier": {
+      "alarm_total": {
+        "fn": 0,
+        "fp": 0,
+        "presisi": null,
+        "recall": null,
+        "tp": 0
+      },
+      "di_bawah_pagu_total": true,
+      "fitur": "jarak_km",
+      "n_uji": 150,
+      "per_komoditas": {
+        "bawang": {
+          "alarm": {
+            "fn": 0,
+            "fp": 0,
+            "tp": 0
+          },
+          "bias_pp": -0.021079990993645187,
+          "lot_melebihi_pagu": 0,
+          "mae_pp": 0.13241805629753306,
+          "n": 50,
+          "pagu": 0.02,
+          "susut_aktual_tertimbang_pct": 0.9621473915478712,
+          "susut_prediksi_tertimbang_pct": 0.9635737866660222
+        },
+        "cabai": {
+          "alarm": {
+            "fn": 0,
+            "fp": 0,
+            "tp": 0
+          },
+          "bias_pp": 0.010109209218858406,
+          "lot_melebihi_pagu": 0,
+          "mae_pp": 0.12653768921444225,
+          "n": 50,
+          "pagu": 0.02,
+          "susut_aktual_tertimbang_pct": 0.8521007954298518,
+          "susut_prediksi_tertimbang_pct": 0.8582022707570246
+        },
+        "kangkung": {
+          "alarm": {
+            "fn": 0,
+            "fp": 0,
+            "tp": 0
+          },
+          "bias_pp": -0.030408868281061423,
+          "lot_melebihi_pagu": 0,
+          "mae_pp": 0.15814478316204858,
+          "n": 50,
+          "pagu": 0.02,
+          "susut_aktual_tertimbang_pct": 0.9494913332958708,
+          "susut_prediksi_tertimbang_pct": 0.919328416327399
+        }
+      },
+      "susut_tertimbang_aktual_pct": 0.9208052603347692,
+      "susut_tertimbang_prediksi_pct": 0.9131230318408997,
+      "target": "jalan"
+    },
+    "jalan/baseline_rata2": {
+      "alarm_total": {
+        "fn": 0,
+        "fp": 0,
+        "presisi": null,
+        "recall": null,
+        "tp": 0
+      },
+      "di_bawah_pagu_total": true,
+      "fitur": null,
+      "n_uji": 150,
+      "per_komoditas": {
+        "bawang": {
+          "alarm": {
+            "fn": 0,
+            "fp": 0,
+            "tp": 0
+          },
+          "bias_pp": -0.030237591728454038,
+          "lot_melebihi_pagu": 0,
+          "mae_pp": 0.24186337461528684,
+          "n": 50,
+          "pagu": 0.02,
+          "susut_aktual_tertimbang_pct": 0.9621473915478712,
+          "susut_prediksi_tertimbang_pct": 0.9260091048237723
+        },
+        "cabai": {
+          "alarm": {
+            "fn": 0,
+            "fp": 0,
+            "tp": 0
+          },
+          "bias_pp": 0.09378617916996658,
+          "lot_melebihi_pagu": 0,
+          "mae_pp": 0.24615074576310284,
+          "n": 50,
+          "pagu": 0.02,
+          "susut_aktual_tertimbang_pct": 0.8521007954298518,
+          "susut_prediksi_tertimbang_pct": 0.9632197747984734
+        },
+        "kangkung": {
+          "alarm": {
+            "fn": 0,
+            "fp": 0,
+            "tp": 0
+          },
+          "bias_pp": -0.016765509038741543,
+          "lot_melebihi_pagu": 0,
+          "mae_pp": 0.23282823807545042,
+          "n": 50,
+          "pagu": 0.02,
+          "susut_aktual_tertimbang_pct": 0.9494913332958708,
+          "susut_prediksi_tertimbang_pct": 0.9428138238862143
+        }
+      },
+      "susut_tertimbang_aktual_pct": 0.9208052603347692,
+      "susut_tertimbang_prediksi_pct": 0.9442242386669325,
+      "target": "jalan"
+    },
+    "sortir/baseline_linier": {
+      "alarm_total": {
+        "fn": 20,
+        "fp": 6,
+        "presisi": 0.625,
+        "recall": 0.3333333333333333,
+        "tp": 10
+      },
+      "di_bawah_pagu_total": false,
+      "fitur": "lama_simpan_jam",
+      "n_uji": 150,
+      "per_komoditas": {
+        "bawang": {
+          "alarm": {
+            "fn": 3,
+            "fp": 0,
+            "tp": 0
+          },
+          "bias_pp": -0.020385151970949974,
+          "lot_melebihi_pagu": 3,
+          "mae_pp": 0.542875104720356,
+          "n": 50,
+          "pagu": 0.04,
+          "susut_aktual_tertimbang_pct": 2.6093523145092865,
+          "susut_prediksi_tertimbang_pct": 2.536743367514628
+        },
+        "cabai": {
+          "alarm": {
+            "fn": 6,
+            "fp": 1,
+            "tp": 1
+          },
+          "bias_pp": 0.08790875434128247,
+          "lot_melebihi_pagu": 7,
+          "mae_pp": 0.7935098628648548,
+          "n": 50,
+          "pagu": 0.06,
+          "susut_aktual_tertimbang_pct": 4.786532645436755,
+          "susut_prediksi_tertimbang_pct": 4.809330237307733
+        },
+        "kangkung": {
+          "alarm": {
+            "fn": 11,
+            "fp": 5,
+            "tp": 9
+          },
+          "bias_pp": -0.07096975763703486,
+          "lot_melebihi_pagu": 20,
+          "mae_pp": 1.1513423328548873,
+          "n": 50,
+          "pagu": 0.08,
+          "susut_aktual_tertimbang_pct": 7.547806640289007,
+          "susut_prediksi_tertimbang_pct": 7.5079117925453716
+        }
+      },
+      "susut_tertimbang_aktual_pct": 5.055665421956684,
+      "susut_tertimbang_prediksi_pct": 5.026458847712433,
+      "target": "sortir"
+    },
+    "sortir/baseline_rata2": {
+      "alarm_total": {
+        "fn": 30,
+        "fp": 0,
+        "presisi": null,
+        "recall": 0.0,
+        "tp": 0
+      },
+      "di_bawah_pagu_total": false,
+      "fitur": null,
+      "n_uji": 150,
+      "per_komoditas": {
+        "bawang": {
+          "alarm": {
+            "fn": 3,
+            "fp": 0,
+            "tp": 0
+          },
+          "bias_pp": -0.01976466958814516,
+          "lot_melebihi_pagu": 3,
+          "mae_pp": 0.5950038625161829,
+          "n": 50,
+          "pagu": 0.04,
+          "susut_aktual_tertimbang_pct": 2.6093523145092865,
+          "susut_prediksi_tertimbang_pct": 2.4927726043857015
+        },
+        "cabai": {
+          "alarm": {
+            "fn": 7,
+            "fp": 0,
+            "tp": 0
+          },
+          "bias_pp": 0.23940390985644935,
+          "lot_melebihi_pagu": 7,
+          "mae_pp": 1.004910593624346,
+          "n": 50,
+          "pagu": 0.06,
+          "susut_aktual_tertimbang_pct": 4.786532645436755,
+          "susut_prediksi_tertimbang_pct": 4.938463973660884
+        },
+        "kangkung": {
+          "alarm": {
+            "fn": 20,
+            "fp": 0,
+            "tp": 0
+          },
+          "bias_pp": -0.05499342745429267,
+          "lot_melebihi_pagu": 20,
+          "mae_pp": 1.3355226883406917,
+          "n": 50,
+          "pagu": 0.08,
+          "susut_aktual_tertimbang_pct": 7.547806640289007,
+          "susut_prediksi_tertimbang_pct": 7.4621233859397424
+        }
+      },
+      "susut_tertimbang_aktual_pct": 5.055665421956684,
+      "susut_tertimbang_prediksi_pct": 5.039990963153106,
+      "target": "sortir"
+    }
+  },
+  "n_latih": 450,
+  "n_uji": 150,
+  "seed": 20261021,
+  "versi_model": "susut-v1.0.0"
+}
