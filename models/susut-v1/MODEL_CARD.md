@@ -12,7 +12,7 @@ Baseline prediksi susut per lot per komoditas pilot (cabai, bawang, kangkung) un
 - Dilatih: `python -m training.susut.train` (seed 20261021), hanya pustaka standar Python.
 
 ## Data
-- Sintetis: 200 lot per komoditas (600), pisah stratified 450 latih / 150 uji. Berat integer gram. Setiap baris bertanda `sintetis=True`.
+- Sintetis: 200 lot per komoditas (600), pisah stratified 450 latih / 150 uji. Semua berat bilangan bulat gram (bukan kg desimal; skema menolak float/negatif, `berat_*_total_g` di metrik juga int). Setiap baris bertanda `sintetis=True`.
 - Skema mengikuti FSD/20 (timbangan KOTOR/BERSIH) dan KONTEKS §6. Parameter generator karangan, bukan statistik nyata dan bukan pagu BRD.
 - Data nyata: akan datang dari `lumbung-data-pipeline` (belum tersedia).
 

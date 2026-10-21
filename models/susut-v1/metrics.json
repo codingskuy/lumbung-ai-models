@@ -19,6 +19,8 @@
             "fp": 0,
             "tp": 0
           },
+          "berat_awal_total_g": 5165113,
+          "berat_susut_total_g": 49696,
           "bias_pp": -0.021079990993645187,
           "lot_melebihi_pagu": 0,
           "mae_pp": 0.13241805629753306,
@@ -33,6 +35,8 @@
             "fp": 0,
             "tp": 0
           },
+          "berat_awal_total_g": 5351949,
+          "berat_susut_total_g": 45604,
           "bias_pp": 0.010109209218858406,
           "lot_melebihi_pagu": 0,
           "mae_pp": 0.12653768921444225,
@@ -47,6 +51,8 @@
             "fp": 0,
             "tp": 0
           },
+          "berat_awal_total_g": 5374246,
+          "berat_susut_total_g": 51028,
           "bias_pp": -0.030408868281061423,
           "lot_melebihi_pagu": 0,
           "mae_pp": 0.15814478316204858,
@@ -78,6 +84,8 @@
             "fp": 0,
             "tp": 0
           },
+          "berat_awal_total_g": 5165113,
+          "berat_susut_total_g": 49696,
           "bias_pp": -0.030237591728454038,
           "lot_melebihi_pagu": 0,
           "mae_pp": 0.24186337461528684,
@@ -92,6 +100,8 @@
             "fp": 0,
             "tp": 0
           },
+          "berat_awal_total_g": 5351949,
+          "berat_susut_total_g": 45604,
           "bias_pp": 0.09378617916996658,
           "lot_melebihi_pagu": 0,
           "mae_pp": 0.24615074576310284,
@@ -106,6 +116,8 @@
             "fp": 0,
             "tp": 0
           },
+          "berat_awal_total_g": 5374246,
+          "berat_susut_total_g": 51028,
           "bias_pp": -0.016765509038741543,
           "lot_melebihi_pagu": 0,
           "mae_pp": 0.23282823807545042,
@@ -137,6 +149,8 @@
             "fp": 0,
             "tp": 0
           },
+          "berat_awal_total_g": 5303500,
+          "berat_susut_total_g": 138387,
           "bias_pp": -0.020385151970949974,
           "lot_melebihi_pagu": 3,
           "mae_pp": 0.542875104720356,
@@ -151,6 +165,8 @@
             "fp": 1,
             "tp": 1
           },
+          "berat_awal_total_g": 5621000,
+          "berat_susut_total_g": 269051,
           "bias_pp": 0.08790875434128247,
           "lot_melebihi_pagu": 7,
           "mae_pp": 0.7935098628648548,
@@ -165,6 +181,8 @@
             "fp": 5,
             "tp": 9
           },
+          "berat_awal_total_g": 5813000,
+          "berat_susut_total_g": 438754,
           "bias_pp": -0.07096975763703486,
           "lot_melebihi_pagu": 20,
           "mae_pp": 1.1513423328548873,
@@ -196,6 +214,8 @@
             "fp": 0,
             "tp": 0
           },
+          "berat_awal_total_g": 5303500,
+          "berat_susut_total_g": 138387,
           "bias_pp": -0.01976466958814516,
           "lot_melebihi_pagu": 3,
           "mae_pp": 0.5950038625161829,
@@ -210,6 +230,8 @@
             "fp": 0,
             "tp": 0
           },
+          "berat_awal_total_g": 5621000,
+          "berat_susut_total_g": 269051,
           "bias_pp": 0.23940390985644935,
           "lot_melebihi_pagu": 7,
           "mae_pp": 1.004910593624346,
@@ -224,6 +246,8 @@
             "fp": 0,
             "tp": 0
           },
+          "berat_awal_total_g": 5813000,
+          "berat_susut_total_g": 438754,
           "bias_pp": -0.05499342745429267,
           "lot_melebihi_pagu": 20,
           "mae_pp": 1.3355226883406917,
