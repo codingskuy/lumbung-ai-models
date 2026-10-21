@@ -9,3 +9,4 @@ Semua perubahan penting lumbung-ai-models dicatat di sini. Format mengikuti Keep
 - Baseline prediksi susut sortir/jalan per komoditas pilot + model card `susut-v1` + uji (tiket LMB-AI-002). Data sintetis, bukan data nyata.
 - Baseline prediksi harga 3 komoditas pilot (naif/MA/EMA) + model card `harga-v1` + papan harga resmi BR-305 + uji (tiket LMB-AI-003). Data sintetis; keluaran anjuran pembanding.
 - Berat wajib gram bilangan bulat di skema susut (validasi tipe), metrik total gram int, model card diperbarui (LMB-AI-002).
+- Harga petani Grade B 85% papan (BR-002), Grade C ditolak, pembayaran dari berat gram integer; model card harga-v1 diperbarui (LMB-AI-003).

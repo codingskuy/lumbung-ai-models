@@ -5,6 +5,8 @@
 ## Tujuan
 Baseline prediksi harga pasar minggu depan (median 3 referensi) untuk cabai, bawang, kangkung, sebagai sanity-check survei referensi. Keluaran berstatus anjuran pembanding (`status = "anjuran-pembanding"`). Papan harga resmi tetap formula BR-305 (median 3 referensi - 10%, dibulatkan ke bawah kelipatan Rp500; fungsi `papan_harga_resmi`, tidak memanggil model), BUKAN keluaran model.
 
+Harga ke petani per grade (BRD BR-002 beku): Grade A 100% papan, Grade B 85% papan dibulatkan ke bawah kelipatan Rp500 (contoh dokumen: 31.500 -> 26.500), Grade C ditolak (`harga_papan_grade`; bukan keluaran model). Model hanya memprediksi harga pasar (median 3 referensi), bukan harga per grade. Pembayaran memakai berat bersih gram bilangan bulat (`bayar_petani_rp`, rupiah integer, pembulatan ke bawah = asumsi). Semua berat di repo ini gram integer; harga Rp integer per kg.
+
 ## Model
 - `naif`: median minggu terakhir. `ma`: rata-rata bergerak 4 minggu. `ema`: rata-rata bergerak eksponensial alpha 0,5 (metode rilis `ema`, MAPE rata-rata terendah di data sintetis).
 - Tanpa artefak bobot (parameter hiper di kode). Serving hanya lewat API Rust; tidak ada Python di produksi. Versi: harga-v1.0.0.
