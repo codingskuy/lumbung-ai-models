@@ -28,3 +28,6 @@ Cargo.lock.bak
 .vscode/
 .idea/
 .DS_Store
+
+# Graphify (graf kode lokal)
+graphify-out/
