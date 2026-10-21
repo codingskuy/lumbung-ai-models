@@ -11,7 +11,7 @@ def pagu(target: str, komoditas: str) -> float:
 
 
 def evaluasi(model: BaselineSusut, uji: list[LotSusut]) -> dict:
-    y_fn, w_fn = TARGET[model.target]
+    y_fn, w_fn, akhir_fn = TARGET[model.target]
     per_k: dict[str, dict] = {}
     tp = fp = fn = 0
     tot_w = tot_y = tot_p = 0.0
@@ -34,6 +34,8 @@ def evaluasi(model: BaselineSusut, uji: list[LotSusut]) -> dict:
         tot_p += sum(w * p for w, p in zip(ws, ps))
         per_k[k] = {
             "n": len(baris),
+            "berat_awal_total_g": sum(w_fn(d) for d in baris),      # int gram
+            "berat_susut_total_g": sum(w_fn(d) - akhir_fn(d) for d in baris),  # int gram
             "pagu": batas,
             "mae_pp": 100 * sum(abs(y - p) for y, p in zip(ys, ps)) / len(ys),
             "bias_pp": 100 * sum(p - y for y, p in zip(ys, ps)) / len(ys),

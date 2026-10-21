@@ -12,9 +12,10 @@ from dataclasses import dataclass, field
 from training.common import KOMODITAS
 from training.susut.data import LotSusut
 
+# target -> (fungsi susut pecahan, berat awal gram int, berat akhir gram int)
 TARGET = {
-    "sortir": (lambda d: d.susut_sortir, lambda d: d.berat_kotor_g),
-    "jalan": (lambda d: d.susut_jalan, lambda d: d.berat_berangkat_g),
+    "sortir": (lambda d: d.susut_sortir, lambda d: d.berat_kotor_g, lambda d: d.berat_bersih_g),
+    "jalan": (lambda d: d.susut_jalan, lambda d: d.berat_berangkat_g, lambda d: d.berat_tiba_g),
 }
 
 
@@ -25,7 +26,7 @@ class BaselineSusut:
     koef: dict[str, tuple[float, float]] = field(default_factory=dict)  # komoditas -> (a, b)
 
     def fit(self, data: list[LotSusut]) -> "BaselineSusut":
-        y_fn, w_fn = TARGET[self.target]
+        y_fn, w_fn, _ = TARGET[self.target]
         for k in KOMODITAS:
             baris = [d for d in data if d.komoditas == k]
             if not baris:

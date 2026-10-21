@@ -98,3 +98,21 @@ def test_model_card_dan_versi_ada_di_repo():
     assert train.VERSI_MODEL in card and "SINTETIS" in card
     for bagian in ("Tujuan", "Data", "Metrik", "Batas"):
         assert bagian in card
+
+
+def test_berat_wajib_gram_integer():
+    with pytest.raises(TypeError):
+        lot(kotor=100.5)          # kg desimal / float ditolak
+    with pytest.raises(TypeError):
+        lot(bersih=95_000.0)
+    with pytest.raises(ValueError):
+        lot(kotor=100_000, bersih=100_001)
+
+
+def test_metrik_berat_integer_gram():
+    data = buat_data_sintetis(30)
+    r = evaluasi(BaselineSusut("sortir").fit(data), data)
+    for v in r["per_komoditas"].values():
+        assert isinstance(v["berat_awal_total_g"], int) and isinstance(v["berat_susut_total_g"], int)
+    assert r["per_komoditas"]["cabai"]["berat_susut_total_g"] == sum(
+        d.berat_kotor_g - d.berat_bersih_g for d in data if d.komoditas == "cabai")
